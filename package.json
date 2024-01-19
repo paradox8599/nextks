@@ -12,7 +12,8 @@
     "start:nx": "next start",
     "build:ks": "keystone build",
     "start:ks": "keystone start",
-    "push": "keystone prisma db push"
+    "dbpush": "keystone prisma db push",
+    "secpush": "fly secrets import <<< $(cat .env | grep -E '^[^#w]')"
   },
   "dependencies": {
     "@keystone-6/auth": "^7.0.2",

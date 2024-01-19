@@ -61,7 +61,7 @@ Before `npm run build:nx`, `source .env && npm run postinstall` is required for 
 
 ### Database initialization
 
-`npm run push`
+`npm run dbpush`
 
 ## Deploy
 
@@ -71,7 +71,7 @@ Before `npm run build:nx`, `source .env && npm run postinstall` is required for 
 
 - Create app if not created: `fly app create <app name>`
 - Change build args & env in `fly.toml`
-- Set secrets: `fly secrets set <KEY>=<VALUE>`
+- Set secrets: `fly secrets set <KEY>=<VALUE>`, or use `.env` by executing `npm run secpush`
 - Deploy `fly deploy`
 
 #### Self Hosting
@@ -91,4 +91,3 @@ Before `npm run build:nx`, `source .env && npm run postinstall` is required for 
 - [Docker](https://docs.docker.com/engine/reference/builder)
 - [Fly.io](https://fly.io/docs/reference/configuration)
 - [Vercel](https://vercel.com)
-
