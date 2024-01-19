@@ -83,3 +83,12 @@ Before `npm run build:nx`, `source .env && npm run postinstall` is required for 
 ### Deploy Next.js
 
 #### Deploy to <https://vercel.app>
+
+## Documents
+
+- [Next.js](https://nextjs.org/docs)
+- [Keystone.js](https://keystonejs.com/docs)
+- [Docker](https://docs.docker.com/engine/reference/builder)
+- [Fly.io](https://fly.io/docs/reference/configuration)
+- [Vercel](https://vercel.com)
+
