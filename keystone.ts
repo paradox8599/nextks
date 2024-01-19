@@ -5,6 +5,7 @@ import { config } from "@keystone-6/core";
 import { session, withAuth } from "./auth";
 import { lists } from "./schema/_lists";
 import {
+  BUCKET,
   DATABASE_URL,
   DB_PROVIDER,
   GRAPHQL_PATH,
@@ -25,8 +26,27 @@ export default withAuth(
       provider: DB_PROVIDER,
       url: DATABASE_URL,
     },
+    storage: {
+      image_store: {
+        kind: "s3",
+        // type: "file",
+        type: "image",
+        region: "auto",
+        bucketName: BUCKET.name!,
+        accessKeyId: BUCKET.accessKeyId,
+        secretAccessKey: BUCKET.secretAccessKey,
+        endpoint: BUCKET.endpoint,
+        generateUrl: (path) => {
+          const original = new URL(path);
+          const customUrl = new URL(original.pathname, BUCKET.customUrl);
+          return customUrl.href;
+        },
+        pathPrefix: "images/",
+      },
+    },
+
     lists,
     graphql: { path: GRAPHQL_PATH },
     session,
-  })
+  }),
 );

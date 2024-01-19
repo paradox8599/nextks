@@ -10,10 +10,18 @@ export const DATABASE_URL = process.env.DATABASE_URL || "file://keystone.db";
 
 // KeystoneJS & GraphQL Server
 export const SERVER_URL = new URL(
-  process.env.NEXT_PUBLIC_SERVER_URL ?? "http://locahost:3000"
+  process.env.NEXT_PUBLIC_SERVER_URL ?? "http://locahost:3000",
 );
 
 export const GRAPHQL_PATH =
   process.env.NEXT_PUBLIC_GRAPHQL_PATH ?? "/api/graphql";
 
 export const GRAPHQL_ENDPOINT = new URL(GRAPHQL_PATH, SERVER_URL);
+
+export const BUCKET = {
+  name: process.env.STORE_BUCKET,
+  accessKeyId: process.env.STORE_ACCESS_KEY_ID,
+  secretAccessKey: process.env.STORE_SECRET_ACCESS_KEY,
+  endpoint: process.env.STORE_ENDPOINT,
+  customUrl: process.env.STORE_CUSTOM_URL,
+};
