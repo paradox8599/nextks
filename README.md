@@ -1,9 +1,5 @@
 # Next.js & Keystone.js
 
-## Setup
-
-`npm install`
-
 ## Environment Variables
 
 create `.env` file for development:
@@ -26,6 +22,10 @@ STORE_SECRET_ACCESS_KEY=""
 NEXT_PUBLIC_SERVER_URL="http://localhost:4000"
 NEXT_PUBLIC_GRAPHQL_PATH="/api/graphql"
 ```
+
+## Setup
+
+`npm i` or `npm install`
 
 ## Start dev
 
