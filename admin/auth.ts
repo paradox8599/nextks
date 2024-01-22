@@ -21,7 +21,7 @@ import { createAuth } from "@keystone-6/auth";
 // see https://keystonejs.com/docs/apis/session for the session docs
 import { statelessSessions } from "@keystone-6/core/session";
 
-import { Role } from "./src/lib/types/auth";
+import { Role } from "../src/lib/types/auth";
 
 // for a stateless session, a SESSION_SECRET should always be provided
 //   especially in production (statelessSessions will throw if SESSION_SECRET is undefined)
