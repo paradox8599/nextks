@@ -69,10 +69,10 @@ Before `npm run build:nx`, `source .env && npm run postinstall` is required for 
 
 #### Deploy to <https://fly.io>
 
-- Create app if not created: `fly app create <app name>`
+- Create app if not exists: `fly app create <app name>`
 - Change build args & env in `fly.toml`
-- Set secrets: `fly secrets set <KEY>=<VALUE>`, or use `.env` by executing `npm run secpush`
-- Deploy `fly deploy`
+- Set secrets: `fly secrets set <KEY>=<VALUE>`, or use existing value in `.env` file by executing `npm run secpush`
+- Deploy: `fly deploy`
 
 #### Self Hosting
 
@@ -84,7 +84,7 @@ Before `npm run build:nx`, `source .env && npm run postinstall` is required for 
 
 #### Deploy to <https://vercel.app>
 
-## Documents
+## Related Documents
 
 - [Next.js](https://nextjs.org/docs)
 - [Keystone.js](https://keystonejs.com/docs)

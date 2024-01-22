@@ -10,10 +10,6 @@ services:
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
       - ./.keystone/postgres:/var/lib/postgresql/data
-    networks:
-      nextks:
-        aliases:
-          - nextks-db
 
   admin:
     build:
@@ -21,18 +17,19 @@ services:
       args:
         DB_PROVIDER: "postgresql"
     environment:
+      NODE_ENV: "production"
       KS_PORT: "3000"
+
       DATABASE_URL: "postgresql://nextks:nextks@db:5432/nextks"
+
+      STORE_BUCKET: ""
+      STORE_ENDPOINT: ""
+      STORE_CUSTOM_URL: ""
+      STORE_ACCESS_KEY_ID: ""
+      STORE_SECRET_ACCESS_KEY: ""
+
+
       NEXT_PUBLIC_GRAPHQL_PATH: "/api/graphql"
       NEXT_PUBLIC_SERVER_URL: "http://localhost:3000"
     ports:
       - 3000:3000
-    networks:
-      nextks:
-      nginx-proxy:
-        aliases:
-          - nextks
-
-networks:
-  nextks:
-  nginx-proxy:

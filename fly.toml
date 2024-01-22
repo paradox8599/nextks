@@ -18,7 +18,7 @@ KS_PORT = "3000"
 NEXT_PUBLIC_GRAPHQL_PATH = "/api/graphql"
 NEXT_PUBLIC_SERVER_URL = "https://nextks.fly.dev"
 
-# secrets
+# # secrets, add with `fly secrets` command
 # DATABASE_URL = ""
 # STORE_ENDPOINT=""
 # STORE_CUSTOM_URL=""
