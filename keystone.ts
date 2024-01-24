@@ -32,7 +32,7 @@ export default withAuth(
         // type: "file",
         type: "image",
         region: "auto",
-        bucketName: BUCKET.name!,
+        bucketName: BUCKET.name,
         accessKeyId: BUCKET.accessKeyId,
         secretAccessKey: BUCKET.secretAccessKey,
         endpoint: BUCKET.endpoint,
