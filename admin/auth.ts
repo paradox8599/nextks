@@ -25,10 +25,7 @@ import { Role } from "../src/lib/types/auth";
 
 // for a stateless session, a SESSION_SECRET should always be provided
 //   especially in production (statelessSessions will throw if SESSION_SECRET is undefined)
-let sessionSecret = process.env.SESSION_SECRET;
-if (!sessionSecret && process.env.NODE_ENV !== "production") {
-  sessionSecret = randomBytes(32).toString("hex");
-}
+const sessionSecret = randomBytes(32).toString("hex");
 
 // withAuth is a function we can use to wrap our base configuration
 const { withAuth } = createAuth({
