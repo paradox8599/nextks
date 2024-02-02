@@ -3,8 +3,8 @@ import { allowAll } from "@keystone-6/core/access";
 import { text, password, select } from "@keystone-6/core/fields";
 
 import { type Lists } from ".keystone/types";
-import { Role, RoleName } from "../src/lib/types/auth";
-import { createdAtField, updatedAtField } from "../admin/helpers/fields";
+import { Role, RoleName } from "../../src/lib/types/auth";
+import { createdAtField, updatedAtField } from "../../admin/helpers/fields";
 
 export const User: Lists.User = list({
   // WARNING
@@ -20,7 +20,7 @@ export const User: Lists.User = list({
       type: "integer",
       defaultValue: Role.None,
       options: Object.keys(Role)
-        .filter((v) => isNaN(Number(v)))
+        .filter((v) => Number.isNaN(Number(v)))
         .map((key) => ({
           label: key,
           value: Role[key as RoleName],

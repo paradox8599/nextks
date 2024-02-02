@@ -25,7 +25,7 @@ NEXT_PUBLIC_GRAPHQL_PATH="/api/graphql"
 
 ## Setup
 
-`npm i` or `npm install`
+`npm install`
 
 ## Start dev
 
