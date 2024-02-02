@@ -12,11 +12,11 @@ DB_PROVIDER="postgresql"
 DATABASE_URL="postgresql://nextks:nextks@localhost:5432/nextks"
 
 # Cloudflare R2 / AWS S3
-STORE_BUCKET="nextks"
-STORE_ENDPOINT=""
-STORE_CUSTOM_URL=""
-STORE_ACCESS_KEY_ID=""
-STORE_SECRET_ACCESS_KEY=""
+AWS_BUCKET="nextks"
+AWS_ENDPOINT_URL=""
+AWS_CUSTOM_URL=""
+AWS_ACCESS_KEY_ID=""
+AWS_SECRET_ACCESS_KEY=""
 
 # using nextjs graphql route as server so no need to start a keystone server
 NEXT_PUBLIC_SERVER_URL="http://localhost:4000"

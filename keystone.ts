@@ -33,13 +33,13 @@ export default withAuth(
         bucketName: BUCKET.name,
         accessKeyId: BUCKET.accessKeyId,
         secretAccessKey: BUCKET.secretAccessKey,
-        endpoint: BUCKET.endpoint,
+        endpoint: BUCKET.endpointUrl,
+        pathPrefix: "images/",
         generateUrl: (path) => {
           const original = new URL(path);
           const customUrl = new URL(original.pathname, BUCKET.customUrl);
           return customUrl.href;
         },
-        pathPrefix: "images/",
       },
     },
 

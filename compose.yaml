@@ -11,25 +11,3 @@ services:
     volumes:
       - ./.keystone/postgres:/var/lib/postgresql/data
 
-  admin:
-    build:
-      dockerfile: Dockerfile.admin
-      args:
-        DB_PROVIDER: "postgresql"
-    environment:
-      NODE_ENV: "production"
-      KS_PORT: "3000"
-
-      DATABASE_URL: "postgresql://nextks:nextks@db:5432/nextks"
-
-      STORE_BUCKET: ""
-      STORE_ENDPOINT: ""
-      STORE_CUSTOM_URL: ""
-      STORE_ACCESS_KEY_ID: ""
-      STORE_SECRET_ACCESS_KEY: ""
-
-
-      NEXT_PUBLIC_GRAPHQL_PATH: "/api/graphql"
-      NEXT_PUBLIC_SERVER_URL: "http://localhost:3000"
-    ports:
-      - 3000:3000
