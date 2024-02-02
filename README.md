@@ -55,13 +55,17 @@ Check API explorer for query construction: `http://localhost:3000/api/graphql`
 
 ## Build
 
-### Environment Variables
+- Next: `npm run build:nx`
+- Keystone: `npm run build:ks`
 
-Before `npm run build:nx`, `source .env && npm run postinstall` is required for generating prisma db config.
+### Database schema
 
-### Database initialization
+- Update: `npm run push`
+- Wipe all & reset: `npm run reset`
 
-`npm run push`
+## Backup
+
+See `run.sh`
 
 ## Deploy
 
