@@ -1,7 +1,7 @@
 import { config } from "@keystone-6/core";
 
 import { session, withAuth } from "./admin/auth";
-import { lists } from "./schema/_lists";
+import { lists } from "./admin/schema/_lists";
 import {
   BUCKET,
   DATABASE_URL,
