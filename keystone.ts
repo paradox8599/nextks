@@ -10,11 +10,33 @@ import {
   KS_PORT,
 } from "./src/lib/variables";
 import { Role } from "./src/lib/types/auth";
+import { type Context } from ".keystone/types";
+import { NextApiRequest, NextApiResponse } from "next";
+
+
+function withContext<
+  F extends (
+    req: NextApiRequest,
+    res: NextApiResponse,
+    context: Context,
+  ) => void,
+>(commonContext: Context, f: F) {
+  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  return async (req: any, res: any) => {
+    // const request = req as NextApiRequest;
+    // const reponse = res as NextApiResponse;
+    return f(req, res, await commonContext.withRequest(req, res));
+  };
+}
+
 
 export default withAuth(
   config({
     server: {
       port: KS_PORT,
+      extendExpressApp(app, context) {
+        app.get("/api/example", withContext(context, (_req, res, _context) => res.json({ hello: "world" })));
+      },
     },
     ui: {
       // fix: AdminMeta access denied when login to admin ui
