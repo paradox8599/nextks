@@ -14,9 +14,12 @@ RUN npm ci --ignore-scripts \
     && npm run build:ks \
     && npm prune --production \
     && rm -rf /root/.npm \
-    && chown -R node:node /app 
+    && chown -R node:node /app \
+    && chmod +x run.sh \
+    && echo "done"
 
-RUN chmod +x run.sh && apk add --no-cache aws-cli postgresql-client
+# remove this if do not backup, (also change run.sh)
+RUN apk add --no-cache aws-cli postgresql-client
 
 USER node
 
