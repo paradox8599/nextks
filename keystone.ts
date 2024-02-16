@@ -13,7 +13,6 @@ import { Role } from "./src/lib/types/auth";
 import { type Context } from ".keystone/types";
 import { NextApiRequest, NextApiResponse } from "next";
 
-
 function withContext<
   F extends (
     req: NextApiRequest,
@@ -29,13 +28,17 @@ function withContext<
   };
 }
 
-
 export default withAuth(
   config({
     server: {
       port: KS_PORT,
       extendExpressApp(app, context) {
-        app.get("/api/example", withContext(context, (_req, res, _context) => res.json({ hello: "world" })));
+        app.get(
+          "/api/example",
+          withContext(context, (_req, res, _context) =>
+            res.json({ hello: "world" }),
+          ),
+        );
       },
     },
     ui: {
