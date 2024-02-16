@@ -20,7 +20,7 @@ export const User: Lists.User = list({
       type: "integer",
       defaultValue: Role.None,
       options: Object.keys(Role)
-        .filter((v) => Number.isNaN(Number(v)))
+        .filter((v) => Number.isNaN(Number(v)) && !["None", "All"].includes(v))
         .map((key) => ({
           label: key,
           value: Role[key as RoleName],
