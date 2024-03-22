@@ -78,7 +78,8 @@ See `run.sh`
 - Create app if not exists: `fly app create <app name>`
 - Change build args & env in `fly.toml`
 - Set secrets by import: `fly secrets import` then type key-value pairs line by line, or use `.env` with command `fly secrets import <<< $(cat .env | grep -E '^[^#w]')`
-- Deploy: `fly deploy`
+- Deploy: `fly deploy --build-arg NAME=VALUE --build-secret NAME=VALUE`
+  - [Setting build secrets](https://fly.io/docs/reference/build-secrets)
 
 #### Self Hosting
 

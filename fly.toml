@@ -11,9 +11,11 @@ swap_size_mb = 256
 dockerfile = "Dockerfile.admin"
 
 [build.args]
+# fly deploy --build-arg NAME=VALUE --build-secret NAME=VALUE
 DB_PROVIDER = "postgresql"
 
 [env]
+# see README for a complete list
 KS_PORT = "3000"
 NEXT_PUBLIC_GRAPHQL_PATH = "/api/graphql"
 NEXT_PUBLIC_SERVER_URL = "https://nextks.fly.dev"
