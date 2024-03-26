@@ -2,7 +2,7 @@
 DB_URL=$(echo "$DATABASE_URL" | cut -d "?" -f 1)
 while true; do
 	echo "[backup] backup on $(date)"
-	fn=zcm-$(date +%F-%H-%M-%S).sql
+	fn=pgdump-$(date +%F-%H-%M-%S).sql
 	echo "[backup] pulling db to $fn"
 	pg_dump "$DB_URL" >"$fn"
 	echo "[backup] uploading backup"
