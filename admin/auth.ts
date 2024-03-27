@@ -21,7 +21,7 @@ import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
 
 import { Role } from "../src/lib/types/auth";
-import { SESSION_SECRET } from "@/lib/variables";
+import { SESSION_SECRET } from "../src/lib/variables";
 
 // withAuth is a function we can use to wrap our base configuration
 const { withAuth } = createAuth({
