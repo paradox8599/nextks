@@ -24,7 +24,7 @@ min_machines_running = 1
 processes = ["app"]
 
 [deploy]
-release_command = "npm run push"
+release_command = "npm run migrate"
 
 [[vm]]
 cpu_kind = "shared"
