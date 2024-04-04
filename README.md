@@ -69,6 +69,12 @@ Check API explorer for query construction: `http://localhost:3000/api/graphql`
 
 See `run.sh`
 
+## Database Migration
+
+- [Keystonejs - Database Migration](https://keystonejs.com/docs/guides/database-migration)
+- [Prisma Migrate](https://www.prisma.io/docs/orm/prisma-migrate)
+- Or simply use `npm run push`
+
 ## Deploy
 
 ### Deploy Keystone Admin UI
