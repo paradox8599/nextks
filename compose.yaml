@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:16
+    ports:
+      - 5442:5432
+    environment:
+      POSTGRES_DB: nstock
+      POSTGRES_USER: nstock
+      POSTGRES_PASSWORD: nstock
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./.keystone/postgres:/var/lib/postgresql/data
