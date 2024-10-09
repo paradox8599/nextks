@@ -18,6 +18,10 @@
 - Keystone Admin UI: `npm run dev:ks`
   - http://localhost:3000
 
+### Migration
+
+- `npm run migrate`: [Database Migration](https://keystonejs.com/docs/guides/database-migration)
+
 ### Deploy
 
 - put a single line of PostgresQL URL text in `secret-db_url_prod.txt`
