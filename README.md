@@ -27,9 +27,12 @@
   - Set env: `fly secrets set DATABASE_URL=$(cat secret-db_url_prod.txt)`
   - `npm run deploy`
 
-## Guides
+## Pages & APIs
 
-NextJS Entry Page: [src/app/page.tsx](src/app/page.tsx)
+### Frontend
+
+- NextJS Entry Page: [src/app/page.tsx](src/app/page.tsx)
+- KeystoneJS Admin UI Custom Pages: [admin/pages](admin/pages/x/index.tsx)
 
 ### Data & API
 
