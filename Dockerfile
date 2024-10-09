@@ -5,17 +5,17 @@ ENV DB_PROVIDER=postgresql
 ENV DATABASE_URL=${DATABASE_URL}
 ENV TZ=Australia/Sydney
 COPY package.json package.json
-COPY package-lock.json package-lock.json
+COPY bun.lockb bun.lockb
 COPY .env .env
-RUN touch .env.local
+RUN npm i -g bun@1.1.29 \
+  && bun i --frozen-lockfile --ignore-scripts
 
 FROM base AS build
-RUN npm ci --ignore-scripts
 COPY . .
 RUN \
-  npx keystone postinstall --fix \
-  && npx keystone build \
-  && npx next build
+  bunx keystone postinstall --fix \
+  && bunx keystone build \
+  && bunx next build
 
 ENV NODE_ENV=production
 
