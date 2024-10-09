@@ -30,6 +30,8 @@
   - Create fly app: `fly app create <app name>`
   - Set env: `fly secrets set DATABASE_URL=$(cat secret-db_url_prod.txt)`
   - `bun run deploy`
+- Github Actions
+  - secrets: `FLY_API_TOKEN`, `DATABASE_URL`
 
 ## Pages & APIs
 
