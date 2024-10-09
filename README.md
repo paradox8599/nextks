@@ -29,14 +29,14 @@
 - Deploy on [fly.io](https://fly.io)
   - Create fly app: `fly app create <app name>`
   - Set env: `fly secrets set DATABASE_URL=$(cat secret-db_url_prod.txt)`
-  - `npm run deploy`
+  - `bun run deploy`
 
 ## Pages & APIs
 
 ### Frontend
 
 - NextJS Entry Page: [src/app/page.tsx](src/app/page.tsx)
-- KeystoneJS Admin UI Custom Pages: [admin/pages](admin/pages/x/index.tsx)
+- KeystoneJS Admin UI Custom Pages: [admin/pages](admin/pages/x/index.tsx) with [Pages Router](https://nextjs.org/docs/pages)
 
 ### Data & API
 
