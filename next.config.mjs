@@ -1,17 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  rewrites: async () => [
+    {
+      source: "/admin/:path*",
+      destination: "http://localhost:3000/admin/:path*",
+    },
+  ],
   experimental: {
-    // to use SWR even when babel is added (by jest)
-    forceSwcTransforms: true,
     // without this, 'Error: Expected Upload to be a GraphQL nullable type.'
     serverComponentsExternalPackages: ["graphql"],
   },
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
-  // typescript: {
-  //   ignoreBuildErrors: true,
-  // },
 };
 
 export default nextConfig;
