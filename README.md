@@ -39,6 +39,7 @@
 
 - NextJS Entry Page: [src/app/page.tsx](src/app/page.tsx)
 - KeystoneJS Admin UI Custom Pages: [admin/pages](admin/pages/x/index.tsx) with [Pages Router](https://nextjs.org/docs/pages)
+  - using `/x` as path prefix to avoid conflicts with keystone generated paths
 
 ### Data & API
 
