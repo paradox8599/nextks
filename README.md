@@ -62,3 +62,7 @@
 - Data Fetching: [SWR](https://swr.vercel.app/)
 - Data Processing: [Lodash](https://lodash.com/)
 - State Management: [Valtio](https://github.com/pmndrs/valtio)
+
+## Others
+
+- https://github.com/keystonejs/keystone/pull/9235

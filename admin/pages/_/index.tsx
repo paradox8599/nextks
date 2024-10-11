@@ -1,4 +1,4 @@
-import { getRootLayout } from "../layout";
+import { getRootLayout } from "../../layout-page";
 Page.getLayout = getRootLayout;
 
 export default function Page() {
