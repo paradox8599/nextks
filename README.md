@@ -13,14 +13,14 @@
 
 ### Development
 
-- NextJS: `npm run dev:nx`
+- NextJS: `bun run dev:nx`
   - It starts a Next.js app on http://localhost:4000, and KeystoneJS GraphQL API will be available on http://localhost:4000/api/graphql
-- Keystone Admin UI: `npm run dev:ks`
+- Keystone Admin UI: `bun run dev:ks`
   - http://localhost:3000
 
 ### Migration
 
-- `npm run migrate`: [Database Migration](https://keystonejs.com/docs/guides/database-migration)
+- `bun run migrate`: [Database Migration](https://keystonejs.com/docs/guides/database-migration)
 
 ### Deploy
 
