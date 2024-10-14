@@ -3,7 +3,7 @@ primary_region = "syd"
 swap_size_mb = 256
 
 [processes]
-next = "bunx next start"
+app = "bun run start"
 
 [deploy]
 release_command = "bunx keystone prisma migrate deploy"
@@ -14,7 +14,7 @@ force_https = true
 auto_stop_machines = "suspend"
 auto_start_machines = true
 min_machines_running = 1
-processes = ["next"]
+processes = ["app"]
 
 [[vm]]
 cpu_kind = "shared"
