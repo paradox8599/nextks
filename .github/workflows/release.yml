@@ -21,4 +21,4 @@ jobs:
         uses: superfly/flyctl-actions/setup-flyctl@master
 
       - name: Deploy
-        run: flyctl deploy --build-arg DATABASE_URL=${{ secrets.DATABASE_URL }} -c fly.toml
+        run: flyctl deploy -c fly.toml --build-arg DATABASE_URL=${{ secrets.DATABASE_URL }}
