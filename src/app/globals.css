@@ -29,3 +29,7 @@ body {
 .hide-year .ant-radio-group {
   display: none;
 }
+
+.b {
+  @apply border border-red-500;
+}
