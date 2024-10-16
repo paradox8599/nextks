@@ -1,8 +1,10 @@
+import Iron from "@hapi/iron";
 import { getContext } from "@keystone-6/core/context";
 import config from "../../keystone";
 import { type Context as KsContext } from ".keystone/types";
 import PrismaModule from "@prisma/client";
 import { Session } from "./auth";
+import { cookies } from "next/headers";
 
 export type Context = KsContext & { session?: Session };
 
@@ -15,4 +17,19 @@ export const keystoneContext: Context =
 
 if (process.env.NODE_ENV !== "production") {
   contextThis.keystoneContext = keystoneContext;
+}
+
+export async function getSession() {
+  const cookie = cookies().get("keystonejs-session");
+  if (!cookie) return {};
+  const session = await Iron.unseal(
+    cookie.value,
+    process.env.SESSION_SECRET!,
+    Iron.defaults,
+  );
+  return session;
+}
+
+export async function getContextWithSession() {
+  return keystoneContext.withSession(await getSession());
 }
