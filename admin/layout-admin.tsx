@@ -1,4 +1,5 @@
 import { PageContainer } from "@keystone-6/core/admin-ui/components";
+import "../src/app/globals.css";
 
 export default function AdminPageLayout({
   header,
