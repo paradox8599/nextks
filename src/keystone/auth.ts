@@ -20,6 +20,7 @@ import { createAuth } from "@keystone-6/auth";
 // see https://keystonejs.com/docs/apis/session for the session docs
 import { statelessSessions } from "@keystone-6/core/session";
 import { User } from "@prisma/client";
+import ENV from "../env";
 
 // withAuth is a function we can use to wrap our base configuration
 const { withAuth } = createAuth({
@@ -54,7 +55,7 @@ const sessionMaxAge = 60 * 60 * 24 * 30;
 // you can find out more at https://keystonejs.com/docs/apis/session#session-api
 const session = statelessSessions({
   maxAge: sessionMaxAge,
-  secret: process.env.SESSION_SECRET,
+  secret: ENV.sessionSecret,
 });
 
 type Session = {

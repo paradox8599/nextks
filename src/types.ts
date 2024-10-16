@@ -1,6 +1,5 @@
 import { User } from "@prisma/client";
 
-
 export type Only<T, U> = {
   [P in keyof T]: T[P];
 } & {
@@ -31,4 +30,3 @@ export function isAuthFailure(
 ): result is PasswordAuthFailure {
   return "message" in result;
 }
-

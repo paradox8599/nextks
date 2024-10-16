@@ -5,6 +5,7 @@ import { type Context as KsContext } from ".keystone/types";
 import PrismaModule from "@prisma/client";
 import { Session } from "./auth";
 import { cookies } from "next/headers";
+import ENV from "../env";
 
 export type Context = KsContext & { session?: Session };
 
@@ -15,7 +16,7 @@ const contextThis = globalThis as ContextThis;
 export const keystoneContext: Context =
   contextThis.keystoneContext ?? getContext(config, PrismaModule);
 
-if (process.env.NODE_ENV !== "production") {
+if (ENV.nodeEnv !== "production") {
   contextThis.keystoneContext = keystoneContext;
 }
 
@@ -24,7 +25,7 @@ export async function getSession() {
   if (!cookie) return {};
   const session = await Iron.unseal(
     cookie.value,
-    process.env.SESSION_SECRET!,
+    ENV.sessionSecret,
     Iron.defaults,
   );
   return session;
