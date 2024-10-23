@@ -63,6 +63,7 @@
 - Data Processing: [Lodash](https://lodash.com/)
 - State Management: [Valtio](https://github.com/pmndrs/valtio)
 
-## Others
+## Other Readings
 
-- https://github.com/keystonejs/keystone/pull/9235
+- [Add support for developers to replace the default esbuild configuration #9235](https://github.com/keystonejs/keystone/pull/9235)
+- [Configure Prisma Client with PgBouncer](https://www.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections/pgbouncer)
