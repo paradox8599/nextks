@@ -11,7 +11,7 @@ COPY package.json package.json
 COPY bun.lockb bun.lockb
 COPY .env .env
 
-RUN npm i -g bun@1.1.29 \
+RUN npm i -g bun@1.1.32 \
   && bun i --frozen-lockfile --ignore-scripts
 
 
@@ -19,12 +19,13 @@ FROM base AS build
 
 COPY . .
 
+ENV NODE_ENV=production
+
 RUN \
   bunx keystone postinstall --fix \
   && bunx keystone build \
   && bunx next build
 
-ENV NODE_ENV=production
 
 EXPOSE 3000 4000
 
