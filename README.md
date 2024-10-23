@@ -40,7 +40,7 @@
 - NextJS Entry Page: [src/app/page.tsx](src/app/page.tsx)
 - KeystoneJS Admin UI Custom Pages: [admin/pages/custom](admin/pages/custom/index.tsx)
   - using `/custom` as path prefix to avoid conflicts with keystone generated paths
-- KeystonJS Custom NextJS Pages [admin/pages/\_](admin/pages/_/index.tsx) with [Pages Router](https://nextjs.org/docs/pages)
+- KeystonJS Custom NextJS Pages [admin/pages/custom](admin/pages/custom/index.tsx) with [Pages Router](https://nextjs.org/docs/pages)
 
 ### Data & API
 
@@ -53,6 +53,7 @@
 - [src/keystone/context.ts](src/keystone/context.ts)
   - [NextJS Route Handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
   - [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
+    - use [getContextWithSession()](src/keystone/context.ts) to get context with user session
 
 ## Docs
 
