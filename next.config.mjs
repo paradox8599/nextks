@@ -6,10 +6,8 @@ const nextConfig = {
       destination: "http://localhost:3000/admin/:path*",
     },
   ],
-  experimental: {
-    // without this, 'Error: Expected Upload to be a GraphQL nullable type.'
-    serverComponentsExternalPackages: ["graphql"],
-  },
+  // without this, 'Error: Expected Upload to be a GraphQL nullable type.'
+  serverExternalPackages: ["graphql"],
 };
 
 export default nextConfig;
