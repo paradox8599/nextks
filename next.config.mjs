@@ -1,9 +1,11 @@
+export const ksPath = "admin";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   rewrites: async () => [
     {
-      source: "/admin/:path*",
-      destination: "http://localhost:3000/admin/:path*",
+      source: `/${ksPath}/:path*`,
+      destination: `http://localhost:3000/${ksPath}/:path*`,
     },
   ],
   experimental: {
