@@ -55,6 +55,10 @@
   - [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
     - use [getContextWithSession()](src/keystone/context.ts) to get context with user session
 
+## Notes
+
+- `@prisma/client` needs to stay at `5.19.0` for keystone to run
+
 ## Docs
 
 - App: [Next.js](https://nextjs.org/)
