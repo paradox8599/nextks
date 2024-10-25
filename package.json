@@ -8,7 +8,7 @@
     "env": "dotenvx run --convention=nextjs --",
     "init": "bun run env -- keystone postinstall --fix",
     "dev:ks": "bun run env -- keystone dev --no-db-push",
-    "dev:ksp": "bun run env -- keystone dev",
+    "dev:kp": "bun run env -- keystone dev",
     "dev:nx": "next dev -p 4000",
     "dev": "conc -n keystone,next 'bun dev:ks' 'bun dev:nx'",
     "build:ks": "keystone build",
