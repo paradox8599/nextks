@@ -6,7 +6,6 @@ import { allowLoggedIn } from "./_access";
 export const user: Lists.User = list({
   access: allowLoggedIn,
 
-
   fields: {
     name: text({ validation: { isRequired: true } }),
     email: text({ validation: { isRequired: true }, isIndexed: "unique" }),
