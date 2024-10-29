@@ -9,10 +9,10 @@ const execAsync = promisify(exec);
 // Configuration
 const DATABASE_URL = process.env.DATABASE_URL!;
 const DUMP_FILE_NAME = `dump_${dayjs().format("YYYY-MM-DD_HH-mm-ss")}.sql`;
-const R2_BUCKET_NAME = process.env.R2_BUCKET_NAME!;
-const R2_ACCOUNT_ID = process.env.R2_ACCOUNT_ID!;
-const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID!;
-const R2_SECRET_ACCESS_KEY = process.env.R2_SECRET_ACCESS_KEY!;
+const S3_BUCKET_NAME = process.env.S3_BUCKET_NAME!;
+const S3_ENDPOINT = process.env.S3_ENDPOINT!;
+const S3_ACCESS_KEY_ID = process.env.S3_ACCESS_KEY_ID!;
+const S3_SECRET_ACCESS_KEY = process.env.S3_SECRET_ACCESS_KEY!;
 
 async function runPgDump() {
   const command = `pg_dump "${DATABASE_URL}" > ${DUMP_FILE_NAME}`;
@@ -29,18 +29,18 @@ async function runPgDump() {
 async function uploadToR2() {
   const client = new S3Client({
     region: "auto",
-    endpoint: `https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+    endpoint: S3_ENDPOINT,
     credentials: {
-      accessKeyId: R2_ACCESS_KEY_ID,
-      secretAccessKey: R2_SECRET_ACCESS_KEY,
+      accessKeyId: S3_ACCESS_KEY_ID,
+      secretAccessKey: S3_SECRET_ACCESS_KEY,
     },
   });
 
   const fileContent = await fs.readFile(DUMP_FILE_NAME);
 
   const command = new PutObjectCommand({
-    Bucket: R2_BUCKET_NAME,
-    Key: DUMP_FILE_NAME,
+    Bucket: S3_BUCKET_NAME,
+    Key: `db/${DUMP_FILE_NAME}`,
     Body: fileContent,
   });
 

@@ -16,6 +16,20 @@ export default withAuth(
       //   }
       // },
     },
+    storage: ENV.s3
+      ? {
+          default: {
+            kind: "s3",
+            type: "file",
+            region: "auto",
+            bucketName: ENV.s3.bucketName,
+            accessKeyId: ENV.s3.accessKeyId,
+            secretAccessKey: ENV.s3.secretAccessKey,
+            endpoint: ENV.s3.endpoint,
+            signed: ENV.s3.expiry ? { expiry: ENV.s3.expiry } : void 0,
+          },
+        }
+      : void 0,
     lists,
     session,
   }),
