@@ -3,7 +3,6 @@ FROM node:20 AS base
 WORKDIR /app
 
 ARG DATABASE_URL
-# ENV DB_PROVIDER=postgresql
 ENV DATABASE_URL=${DATABASE_URL}
 ENV TZ=Australia/Sydney
 

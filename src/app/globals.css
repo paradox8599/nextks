@@ -24,8 +24,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
 
-.b {
-  @apply border border-red-500;
+  .b {
+    @apply border border-red-500;
+  }
 }
