@@ -39,7 +39,7 @@ const ENV = {
         const env = process.env.S3_EXPIRY_SECONDS;
         if (!env) return void 0;
         const expiry = Number.parseInt(process.env.S3_EXPIRY_SECONDS!);
-        return Number.isNaN(expiry) ? void 0 : expiry;
+        return Number.isNaN(expiry) ? void 0 : { expiry };
       })(),
     };
   })(),

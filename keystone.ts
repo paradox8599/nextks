@@ -18,15 +18,27 @@ export default withAuth(
     },
     storage: ENV.s3
       ? {
-          default: {
+          default_image: {
             kind: "s3",
-            type: "file",
+            type: "image",
             region: "auto",
+            signed: ENV.s3.expiry,
+            endpoint: ENV.s3.endpoint,
             bucketName: ENV.s3.bucketName,
             accessKeyId: ENV.s3.accessKeyId,
             secretAccessKey: ENV.s3.secretAccessKey,
+            pathPrefix: "images/",
+          },
+          default_file: {
+            kind: "s3",
+            type: "file",
+            region: "auto",
+            signed: ENV.s3.expiry,
             endpoint: ENV.s3.endpoint,
-            signed: ENV.s3.expiry ? { expiry: ENV.s3.expiry } : void 0,
+            bucketName: ENV.s3.bucketName,
+            accessKeyId: ENV.s3.accessKeyId,
+            secretAccessKey: ENV.s3.secretAccessKey,
+            pathPrefix: "files/",
           },
         }
       : void 0,
