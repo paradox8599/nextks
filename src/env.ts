@@ -4,7 +4,7 @@ const dbProviders: DBProvider[] = ["sqlite", "postgresql", "mysql"];
 
 // Database
 
-/// use || instead of ?? to avoid empty string
+/// use || instead of ?? to handle empty string
 const databaseUrl =
   process.env.DATABASE_URL || `file:${process.cwd()}/keystone.db`;
 
