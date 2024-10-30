@@ -11,6 +11,7 @@
     "dev:kp": "bun run env -- keystone dev",
     "dev:nx": "next dev -p 4000",
     "dev": "conc -n ks,nx 'bun dev:ks' 'bun dev:nx'",
+    "devp": "conc -n ks,nx 'bun dev:kp' 'bun dev:nx'",
     "build:ks": "keystone build",
     "build:nx": "next build",
     "start:ks": "keystone start",
