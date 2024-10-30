@@ -1,5 +1,6 @@
 name: Deploy release Next.js to Fly
 on:
+  workflow_dispatch:
   push:
     branches: [release]
     paths-ignore:
