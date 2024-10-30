@@ -36,10 +36,11 @@ const ENV = {
       secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
       endpoint: process.env.S3_ENDPOINT!,
       expiry: (() => {
+        const r = (v: number = 3600) => ({ expiry: v });
         const env = process.env.S3_EXPIRY_SECONDS;
-        if (!env) return void 0;
+        if (!env) return r();
         const expiry = Number.parseInt(process.env.S3_EXPIRY_SECONDS!);
-        return Number.isNaN(expiry) ? void 0 : { expiry };
+        return Number.isNaN(expiry) ? r() : r(expiry);
       })(),
     };
   })(),
