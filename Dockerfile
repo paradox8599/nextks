@@ -1,4 +1,4 @@
-FROM node:20 AS base
+FROM node:22-slim AS base
 
 WORKDIR /app
 
@@ -10,7 +10,7 @@ COPY package.json package.json
 COPY bun.lockb bun.lockb
 COPY .env .env
 
-RUN npm i -g bun@1.1.32 \
+RUN npm i -g bun@1.1.33 \
   && bun i --frozen-lockfile --ignore-scripts
 
 
