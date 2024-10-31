@@ -10,6 +10,7 @@
 ### Installation
 
 - `bun install`
+- `bun run init`
 
 ### Development
 
