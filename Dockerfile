@@ -1,4 +1,4 @@
-FROM node:22-slim AS base
+FROM node:22 AS base
 
 WORKDIR /app
 
@@ -11,7 +11,11 @@ COPY bun.lockb bun.lockb
 COPY .env .env
 
 RUN npm i -g bun@1.1.33 \
-  && bun i --frozen-lockfile --ignore-scripts
+  && bun i --frozen-lockfile --ignore-scripts 
+# install extra packages
+# && apt-get update -y 
+# && apt-get install -y --no-install-recommends openssl=3.0.14-1~deb12u2 \
+# && rm -rf /var/lib/apt/lists/*
 
 
 FROM base AS build
