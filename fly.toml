@@ -1,4 +1,4 @@
-app = "app"
+app = "nextks"
 primary_region = "syd"
 swap_size_mb = 256
 
