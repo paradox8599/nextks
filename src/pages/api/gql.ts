@@ -18,7 +18,7 @@ export default createYoga<{
   req: NextApiRequest;
   res: NextApiResponse;
 }>({
-  graphqlEndpoint: "/api/graphql",
+  graphqlEndpoint: "/api/gql",
   schema: keystoneContext.graphql.schema,
   /*
     `keystoneContext` object doesn't have user's session information.
