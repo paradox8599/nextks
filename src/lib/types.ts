@@ -11,3 +11,12 @@ type SizedPage = {
 };
 
 export type PagedProps = Either<OffsetPage, SizedPage>;
+
+export type Text = {
+  text: string;
+  [key: string]: unknown;
+};
+export type Element = {
+  children: (Element | Text)[];
+  [key: string]: unknown;
+};
