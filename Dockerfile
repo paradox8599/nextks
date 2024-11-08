@@ -25,9 +25,9 @@ COPY . .
 ENV NODE_ENV=production
 
 RUN \
-  bunx keystone postinstall --fix \
-  && bunx keystone build \
-  && bunx next build
+  bun keystone postinstall --fix \
+  && bun keystone build \
+  && bun next build
 
 EXPOSE 3000 4000
 

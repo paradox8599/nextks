@@ -3,10 +3,10 @@ primary_region = "syd"
 swap_size_mb = 256
 
 [processes]
-app = "bun run start"
+app = "bun start"
 
 [deploy]
-release_command = "bunx keystone prisma migrate deploy"
+release_command = "bun keystone prisma migrate deploy"
 
 [http_service]
 internal_port = 3000
