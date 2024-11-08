@@ -9,7 +9,7 @@ app = "bun start"
 release_command = "bun keystone prisma migrate deploy"
 
 [http_service]
-internal_port = 3000
+internal_port = 4000
 force_https = true
 auto_stop_machines = "suspend"
 auto_start_machines = true
