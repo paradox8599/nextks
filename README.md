@@ -1,5 +1,9 @@
 # Next.js + Keystone Web App
 
+## TODO
+
+- to fix: cookies syncing for nextjs and keystone admin ui: `Error: Bad hmac value`
+
 ## Getting Started
 
 ### Prerequisites

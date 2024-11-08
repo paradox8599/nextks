@@ -9,7 +9,7 @@ app = "bun start"
 DB_PROVIDER = "postgresql"
 
 [deploy]
-release_command = "bun keystone prisma migrate deploy"
+release_command = "bun migrate deploy"
 
 [http_service]
 internal_port = 4000
