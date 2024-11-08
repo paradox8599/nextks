@@ -28,13 +28,11 @@
 - Deploy on [fly.io](https://fly.io)
   - Create fly app: `fly app create <app name>`
   - Set env: `fly secrets set DATABASE_URL=<DATABASE_URL>` and other secrets as well if needed
-  - fly deploy
-    - `fly deploy --build-arg "DATABASE_URL=<DATABASE_URL>"`
-    - or `bun env -- fly deploy --build-arg "DATABASE_URL=$DATABASE_URL"`
-    - or `fly deploy --build-arg "DATABASE_URL=postgresql"` if postgres is known to be the database
+  - set build args in `fly.toml`
+  - run `fly deploy`
 - Github Actions
   - secrets: `FLY_API_TOKEN`, `DATABASE_URL`
-- Build with docker: `docker build --build-arg "DATABASE_URL=<DATABASE_URL>" .`
+- Build with docker: `docker build -t nextks .`
 
 ## Pages & APIs
 

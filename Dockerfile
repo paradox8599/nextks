@@ -2,8 +2,9 @@ FROM node:22 AS base
 
 WORKDIR /app
 
-ARG DATABASE_URL
-ENV DATABASE_URL=${DATABASE_URL}
+ARG DB_PROVIDER
+ENV DB_PROVIDER=${DB_PROVIDER}
+
 ENV TZ=Australia/Sydney
 
 COPY package.json package.json

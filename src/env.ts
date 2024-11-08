@@ -9,7 +9,9 @@ const databaseUrl =
   process.env.DATABASE_URL || `file:${process.cwd()}/keystone.db`;
 
 const dbProvider: DBProvider =
-  dbProviders.find((p) => databaseUrl.startsWith(p)) ?? "sqlite";
+  dbProviders.find((p) => process.env.DB_PROVIDER === p) ??
+  dbProviders.find((p) => databaseUrl.startsWith(p)) ??
+  "sqlite";
 
 // Final ENV
 

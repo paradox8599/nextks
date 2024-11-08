@@ -5,6 +5,9 @@ swap_size_mb = 256
 [processes]
 app = "bun start"
 
+[build.args]
+DB_PROVIDER = "postgresql"
+
 [deploy]
 release_command = "bun keystone prisma migrate deploy"
 
