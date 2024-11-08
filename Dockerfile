@@ -11,7 +11,7 @@ COPY bun.lockb bun.lockb
 COPY .env .env
 
 RUN npm i -g bun@1.1.34 \
-  && bun i --frozen-lockfile --ignore-scripts 
+  && bun i --frozen-lockfile --ignore-scripts
 
 # install extra packages
 # && apt-get update -y \
@@ -28,7 +28,6 @@ RUN \
   bunx keystone postinstall --fix \
   && bunx keystone build \
   && bunx next build
-
 
 EXPOSE 3000 4000
 
