@@ -25,14 +25,16 @@
 
 ### Deploy
 
-- put a single line of PostgresQL URL text in `secret-db_url_prod.txt`
-- Build with command: `docker build --build-arg "DATABASE_URL=$(cat secret-database_url.txt)" .`
 - Deploy on [fly.io](https://fly.io)
   - Create fly app: `fly app create <app name>`
-  - Set env: `fly secrets set DATABASE_URL=$(cat secret-db_url_prod.txt)`
-  - `bun run deploy`
+  - Set env: `fly secrets set DATABASE_URL=<DATABASE_URL>` and other secrets as well if needed
+  - fly deploy
+    - `fly deploy --build-arg "DATABASE_URL=<DATABASE_URL>"`
+    - or `bun env -- fly deploy --build-arg "DATABASE_URL=$DATABASE_URL"`
+    - or `fly deploy --build-arg "DATABASE_URL=postgresql"` if postgres is known to be the database
 - Github Actions
   - secrets: `FLY_API_TOKEN`, `DATABASE_URL`
+- Build with docker: `docker build --build-arg "DATABASE_URL=<DATABASE_URL>" .`
 
 ## Pages & APIs
 
