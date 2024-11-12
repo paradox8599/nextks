@@ -25,6 +25,7 @@
 
             nativeBuildInputs = with pkgs; [
               nodejs
+              bun
             ];
           };
 
@@ -46,7 +47,8 @@
                 nodejs
               ];
               shellHook = ''
-                ${pkgs.bun}/bin/bun -v
+                echo "Bun:" $(${pkgs.bun}/bin/bun -v)
+                echo "Node:" $(${pkgs.nodejs}/bin/node -v)
               '';
             };
           };
