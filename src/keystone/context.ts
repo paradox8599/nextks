@@ -24,12 +24,11 @@ if (ENV.nodeEnv !== "production") {
 export async function getSession() {
   const cookie = cookies().get("keystonejs-session");
   if (!cookie) return {};
-  const session = await Iron.unseal(
-    cookie.value,
-    ENV.sessionSecret,
-    Iron.defaults,
-  );
-  return session;
+  try {
+    return await Iron.unseal(cookie.value, ENV.sessionSecret, Iron.defaults);
+  } catch (error) {
+    return {};
+  }
 }
 
 export async function getContextWithSession() {
