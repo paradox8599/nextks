@@ -1,5 +1,7 @@
 import { relationship, timestamp } from "@keystone-6/core/fields";
+import { document } from "@keystone-6/fields-document";
 import { BaseListTypeInfo } from "@keystone-6/core/types";
+import { componentBlocks } from "../document/component-blocks";
 
 export function createdAtField<T extends BaseListTypeInfo>() {
   return timestamp<T>({
@@ -32,5 +34,15 @@ export function manyRef<T extends BaseListTypeInfo>(name: string) {
       createView: { fieldMode: "hidden" },
       // itemView: { fieldMode: "read" },
     },
+  });
+}
+
+export function dokument<T extends BaseListTypeInfo>() {
+  return document<T>({
+    formatting: true,
+    dividers: true,
+    links: true,
+    ui: { views: "./src/keystone/document/component-blocks" },
+    componentBlocks,
   });
 }
