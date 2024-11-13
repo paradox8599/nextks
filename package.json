@@ -31,7 +31,7 @@
     "@keystone-6/fields-document": "^9.1.1",
     "@ngneat/falso": "^7.2.0",
     "@preact/signals-react": "^2.2.0",
-    "@prisma/client": "5.22.0",
+    "@prisma/client": "5.19.0",
     "concurrently": "^9.1.0",
     "dayjs": "^1.11.13",
     "graphql": "^16.9.0",
