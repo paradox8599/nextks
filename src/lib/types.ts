@@ -1,4 +1,4 @@
-import { Either } from "@/types";
+import { Either } from "../types";
 
 type OffsetPage = {
   take?: number;
@@ -16,7 +16,7 @@ export type Text = {
   text: string;
   [key: string]: unknown;
 };
-export type Element = {
-  children: (Element | Text)[];
+export type DocumentElement = {
+  children: (DocumentElement | Text)[];
   [key: string]: unknown;
 };

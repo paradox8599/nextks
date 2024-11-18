@@ -1,4 +1,4 @@
-import { blockDemo } from "./blocks";
+import { blockDemo } from "./block-demo";
 
 export const componentBlocks = {
   demo: blockDemo,
